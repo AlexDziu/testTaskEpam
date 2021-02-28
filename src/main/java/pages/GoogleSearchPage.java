@@ -6,11 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static driverManager.DriverManager.getDriver;
-
 @Slf4j
 @Getter
-public class GoogleSearchPage extends BasePage {
+public class GoogleSearchPage implements Helpers {
 
     @FindBy(xpath = "//input[@name='q']")
     private WebElement searchField;

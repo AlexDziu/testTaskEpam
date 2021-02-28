@@ -22,7 +22,8 @@ public class Hooks {
     @After
     public void quiteBrowser(Scenario scenario) {
         if (scenario.isFailed()) {
-            File screenshotAs = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
+            File screenshotAs = ((TakesScreenshot) DriverManager.getDriver())
+                    .getScreenshotAs(OutputType.FILE);
             try {
                 addAttachment("Screenshot", FileUtils.openInputStream(screenshotAs));
             } catch (Exception e) {

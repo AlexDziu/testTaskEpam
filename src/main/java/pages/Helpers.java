@@ -1,24 +1,26 @@
 package pages;
 
-import lombok.Getter;
+import driverManager.DriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static driverManager.DriverManager.getDriver;
+public interface Helpers {
+    default WebDriver getDriver() {
+        return DriverManager.getDriver();
+    }
 
-@Getter
-public abstract class BasePage {
-    protected String getTitle() {
+    default String getTitle() {
         return getDriver().getTitle();
     }
 
-    protected WebElement waitUntilVisible(WebElement element) {
+    default WebElement waitUntilVisible(WebElement element) {
         return new WebDriverWait(getDriver(), 5)
                 .until(ExpectedConditions.visibilityOf(element));
     }
 
-    protected WebElement waitUntilClickable(WebElement element) {
+    default WebElement waitUntilClickable(WebElement element) {
         return new WebDriverWait(getDriver(), 5)
                 .until(ExpectedConditions.elementToBeClickable(element));
     }
