@@ -12,7 +12,7 @@ This is a test task project which created with framework includes 2 automation t
 
 # **How to run tests**
 
-**tests run with default settings: 
+**Tests run with default settings: 
 Browser=chrome, browserWidth=1024, browserHeight=768, threadCount=2**
 
  - mvn clean test allure:serve   
