@@ -1,8 +1,8 @@
-**Description**
+# **Description**
 
 This is a test task project which created with framework includes 2 automation tests
 
-**Requirements**
+# **Requirements**
 
 - JDK8 installed
 - Maven installed
@@ -10,7 +10,7 @@ This is a test task project which created with framework includes 2 automation t
 - Allure used as reporter
 - Browsers: Chrome, Opera, FireFox installed
 
-**How to run tests**
+# **How to run tests**
 
 **tests run with default settings: 
 Browser=chrome, browserWidth=1024, browserHeight=768, threadCount=2**
