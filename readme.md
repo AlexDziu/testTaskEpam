@@ -1,27 +1,32 @@
 **Description**
 
-This is a test task that includes 2 test cases which check google.com
+This is a test task project which created with framework includes 2 automation tests
 
-**Prerequisites**
+**Requirements**
 
 - JDK8 installed
 - Maven installed
 - Cucumber used as framework
 - Allure used as reporter
+- Browsers: Chrome, Opera, FireFox installed
 
 **How to run tests**
 
- - -mvn clean test  
- **run tests with default settings(Browser:chrome,browserWidth=1024,browserHeight=800)**
- 
- - -mvn clean test allure:serve   
+**tests run with default settings: 
+Browser=chrome,browserWidth=1024,browserHeight=768, threadCount=2**
+
+ - mvn clean test allure:serve   
  **run test and generate report**
- - mvn test -DthreadCount= number       
- **where number = 1 or 2 and more if we have more tests run parallel execution**
+
+ - mvn clean test -DthreadCount=1       
+ **we can pass quantity of numbers for run parallel execution**
  
- - -Dbrowser=
- - -DbrowserWidth=
- - -DbrowserHeight=
+ - mvn clean test -Dbrowser=opera    
+**we can choose Browser: chrome, opera or fireFOx**
+ 
+ - mvn clean test -DbrowserWidth=1600 -DbrowserHeight=1024    
+ **we can set parameters for window browser**
+ 
 
 
 
