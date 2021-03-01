@@ -7,16 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import utils.PropertiesReader;
 
 import java.util.Objects;
+
+import static utils.PropertiesReader.getProperty;
 
 public class DriverManager {
     private static final ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
 
     public static void setUpDriver() {
         WebDriver driver;
-        String browser = PropertiesReader.getProperty("browser");
+        String browser = getProperty("browser");
 
         switch (browser) {
             case "opera":
@@ -32,10 +33,9 @@ public class DriverManager {
                 driver = new ChromeDriver();
                 break;
         }
-        driver.manage().window().setSize(new Dimension(Integer.parseInt(PropertiesReader.getProperty("browserWidth")),
-                Integer.parseInt(PropertiesReader.getProperty("browserHeight"))));
+        driver.manage().window().setSize(new Dimension(Integer.parseInt(getProperty("browserWidth")),
+                Integer.parseInt(getProperty("browserHeight"))));
         driver.manage().window().setPosition(new Point(0, 0));
-        driver.get(PropertiesReader.getProperty("domain"));
         DRIVER.set(driver);
     }
 

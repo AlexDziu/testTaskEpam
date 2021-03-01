@@ -20,8 +20,8 @@ public class GoogleSearchPage implements Helpers {
         PageFactory.initElements(getDriver(), this);
     }
 
-    public void openGoogleSearchPage() {
-        getDriver().get("https://www.google.com.ua/");
+    public void openGoogleSearchPage(String domain) {
+        getDriver().get("https://" + domain);
         waitUntilVisible(searchField);
     }
 

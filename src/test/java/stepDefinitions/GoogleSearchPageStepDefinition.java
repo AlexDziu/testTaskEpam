@@ -8,9 +8,9 @@ public class GoogleSearchPageStepDefinition {
 
     GoogleSearchPage googleSearchPage = new GoogleSearchPage();
 
-    @Given("I am on the google.com page")
-    public void openTheGooglePage() {
-        googleSearchPage.openGoogleSearchPage();
+    @Given("I am on the {string} page")
+    public void openTheGooglePage(String domain) {
+        googleSearchPage.openGoogleSearchPage(domain);
     }
 
     @When("Enter {string} in the search field and click search button")

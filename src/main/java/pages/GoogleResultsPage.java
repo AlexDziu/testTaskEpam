@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebElement;
@@ -28,12 +29,12 @@ public class GoogleResultsPage implements Helpers {
         return this;
     }
 
+    @Step("Check if domain present in result pages")
     public boolean domainNameIsPresent(String domainName, int numberOfPages) {
         log.info("Checking that domain name is present on the pages");
         int currentPage = 1;
         while (currentPage <= numberOfPages) {
-            List<WebElement> listOfLinks = getResultLinks();
-            for (WebElement link : listOfLinks) {
+            for (WebElement link : getResultLinks()) {
                 if (link.getText().contains(domainName)) {
                     return true;
                 }
